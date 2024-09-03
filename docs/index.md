@@ -1,5 +1,15 @@
 # Homepage
 
+
+
+<center>
+
+![Aqua Logo](img/aqua_logo.jpg){:height="50%" width="50%"}
+
+</center>
+
+
+
 Aqua language, developed for the Computational Logic course, is a language that simulates the natural world through code. To program in this language, it is necessary to create sets of rivers and fish and define the relationships between them. The language consists of two types of declarations: river declarations and fish declarations.
 
 If you want to start using and compiling codes on aqua, you can check the [Getting Started](getting_started.md) page and also go to my [GitHub repository](https://github.com/RodrigoAnciaes/Linguagem_Autoral_Aqua_Logcomp.git) to get the source code.
