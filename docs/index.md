@@ -20,6 +20,33 @@ If you want to start using and compiling codes on aqua, you can check the [Getti
 * This language was designed to require thinking about the growth curve of populations and river flows.
 * To implement loops and conditionals, it is necessary to consider how populations interact and sometimes exponential growth curves.
 
+### Language EBNF
+```title="EBNF"
+BLOCK = { STATEMENT };
+STATEMENT = ( "λ" | SPAWN | DISCOVER | SUSTAIN | EVENT | RAIN | DRY | EXTINCTION | OPERATION ), "\n" ;
+SPAWN = TYPE, IDENTIFIER, "create", ( "λ" | NUMBER | NUMBER, ",", NUMBER ) ;
+DISCOVER = "discover", "(", IDENTIFIER, ")" ;
+SUSTAIN = IDENTIFIER, "sustains", IDENTIFIER, "\n", "λ", { ( STATEMENT ), "λ" }, "pass_time" ;
+EVENT = "event", IDENTIFIER, COMPARISSON, IDENTIFIER, "\n", "λ", { ( STATEMENT ), "λ" }, "conclude" ;
+RAIN = "rain","(", IDENTIFIER, ")" ;
+DRY = "dry","(", IDENTIFIER, ")" ;
+EXTINCTION = "extinguish", IDENTIFIER ; 
+OPERATION = IDENTIFIER, OP_T, NUMBER, ( "λ" | OP_T, IDENTIFIER ) ;
+IDENTIFIER = LETTER, { LETTER | DIGIT | "_" } ;
+NUMBER = DIGIT, { DIGIT } ;
+LETTER = ( "a" | "..." | "z" | "A" | "..." | "Z" ) ;
+DIGIT = ( "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" | "0" );
+TYPE = ( "river" | "fish" ) ;
+OP_T = ( "branch" | "acumulate" | ">>" | "->" ) ;
+```
+
+### Language sintatic diagram
+<center>
+
+![Aqua Diagram](img/aqua_diagram.png){:height="75%" width="75%"}
+
+</center>
+
 ### Characteristics
 * There are 2 types of variables: Rivers and Fish.
 * Variables do not support negative values.
